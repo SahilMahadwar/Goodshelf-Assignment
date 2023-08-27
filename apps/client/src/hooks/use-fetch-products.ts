@@ -12,7 +12,7 @@ export function useFetchProducts({ section }: { section: string }) {
     try {
       setIsLoading(true);
       const fetchProducts = await axios.get<IApiResponse<IProduct[]>>(
-        `http://localhost:4444/api/v1/products?section_name=${section}`,
+        `${import.meta.env.VITE_API_URL}/products?section_name=${section}`,
       );
 
       setProducts(fetchProducts.data.data);
