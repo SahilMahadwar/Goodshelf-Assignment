@@ -1,10 +1,14 @@
 import cors from "cors";
 import express, { Express, Request, Response } from "express";
 import morgan from "morgan";
+import { connectDB } from "./config/db";
 import { env } from "./utils/env";
 
 // import route files
 import { productsRouter } from "./routes";
+
+// Connect to db
+connectDB();
 
 const app: Express = express();
 
