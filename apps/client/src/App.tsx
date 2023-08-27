@@ -1,7 +1,7 @@
 import { Router } from "./routes/routes";
 
-function App() {
+export const App = () => {
   return <Router />;
-}
+};
 
 export default App;

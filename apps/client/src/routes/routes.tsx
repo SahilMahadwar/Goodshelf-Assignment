@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import { PageLayout } from "../layouts/page-layout";
-import HomePage from "../pages/home";
+import { HomePage } from "../pages/home";
 
 export const Router = () => {
   return (
