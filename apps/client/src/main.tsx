@@ -1,11 +1,15 @@
-import "@fontsource-variable/fredoka";
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.tsx";
+import { BrowserRouter } from "react-router-dom";
+import App from "./app.tsx";
+
+import "@fontsource-variable/fredoka";
 import "./styles/globals.css";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );
