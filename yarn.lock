@@ -264,6 +264,11 @@
   resolved "https://registry.yarnpkg.com/@eslint/js/-/js-8.48.0.tgz#642633964e217905436033a2bd08bf322849b7fb"
   integrity sha512-ZSjtmelB7IJfWD2Fvb7+Z+ChTIKWq6kjda95fLcQKNS5aheVHn4IkfgRQE3sIIzTcSLwLcLZUD9UBt+V7+h+Pw==
 
+"@fontsource-variable/fredoka@^5.0.8":
+  version "5.0.8"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/fredoka/-/fredoka-5.0.8.tgz#3a2f81676c4785ce7bbd1759d01bfb982b17af06"
+  integrity sha512-yx2p4yrMX/ZLNeInrrSiQHRn2r4n1FqnxLDjtANK5aouh4WnGhtTqY18I7wIcP/bdXWUh5OJk76hrBQ7GJZyow==
+
 "@humanwhocodes/config-array@^0.11.10":
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/@humanwhocodes/config-array/-/config-array-0.11.10.tgz#5a3ffe32cc9306365fb3fd572596cd602d5e12d2"
