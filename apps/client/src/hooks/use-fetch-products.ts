@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { IApiResponse, IProduct } from "types";
+import { axiosApiInstance } from "../libs/axios-api-Instance";
 
 export function useFetchProducts({ section }: { section: string }) {
   const [products, setProducts] = useState<IProduct[]>();
@@ -11,9 +11,10 @@ export function useFetchProducts({ section }: { section: string }) {
   const getProducts = async () => {
     try {
       setIsLoading(true);
-      const fetchProducts = await axios.get<IApiResponse<IProduct[]>>(
-        `${import.meta.env.VITE_API_URL}/products?section_name=${section}`,
-      );
+
+      const fetchProducts = await axiosApiInstance.get<
+        IApiResponse<IProduct[]>
+      >(`/products?section_name=${section}`);
 
       setProducts(fetchProducts.data.data);
       setIsLoading(false);
