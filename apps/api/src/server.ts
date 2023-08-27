@@ -3,6 +3,9 @@ import express, { Express, Request, Response } from "express";
 import morgan from "morgan";
 import { env } from "./utils/env";
 
+// import route files
+import { productsRouter } from "./routes";
+
 const app: Express = express();
 
 // Enable CORS
@@ -22,6 +25,9 @@ if (env.NODE_ENV === "development") {
 } else {
   app.use(morgan("short"));
 }
+
+// Mount routers
+app.use("/api/v1/products", productsRouter);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("GoodShelf API");
