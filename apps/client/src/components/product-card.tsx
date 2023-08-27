@@ -46,6 +46,7 @@ export const ProductCardImage = ({
 }) => {
   return (
     <img
+      loading="lazy"
       className="h-44 w-full overflow-hidden rounded-2xl object-cover"
       src={imageUrl}
       alt="product image"
