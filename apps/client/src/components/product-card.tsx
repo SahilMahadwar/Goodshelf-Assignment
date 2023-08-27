@@ -1,5 +1,6 @@
 import { PlusSquare } from "lucide-react";
 import { ReactElement } from "react";
+import { Skeleton } from "./skeleton";
 
 interface IProductCard {
   name: string;
@@ -45,7 +46,7 @@ export const ProductCardImage = ({
 }) => {
   return (
     <img
-      className="h-44 w-full rounded-2xl object-cover"
+      className="h-44 w-full overflow-hidden rounded-2xl object-cover"
       src={imageUrl}
       alt="product image"
     />
@@ -55,10 +56,29 @@ export const ProductCardImage = ({
 export const ProductCardButton = () => {
   return (
     <button>
-      <PlusSquare className="h-6 w-6 text-rose-500" />
+      <PlusSquare className="h-6 w-6 text-rose-400 hover:text-rose-500" />
     </button>
   );
 };
 
+export const ProductCardSkeleton = () => {
+  return (
+    <div>
+      <Skeleton className="h-44 w-full rounded-2xl " />
+
+      <div className="mt-4 space-y-4 px-1.5">
+        <div className="space-y-1">
+          <Skeleton className="h-5 w-36" />
+          <Skeleton className="h-3 w-24" />
+        </div>
+        <div className="flex">
+          <Skeleton className="h-3 w-14" />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+ProductCard.Skeleton = ProductCardSkeleton;
 ProductCard.Button = ProductCardButton;
 ProductCard.Image = ProductCardImage;
