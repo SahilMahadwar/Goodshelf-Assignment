@@ -26,7 +26,10 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   }, [cartProducts]);
 
   useEffect(() => {
-    setCartValue(cartProducts.reduce((total, price) => total + price.price, 0));
+    setCartValue(
+      cartProducts?.reduce((total, price) => total + price.price, 0),
+    );
+    console.log(cartValue);
   }, [cartProducts]);
 
   const addProductToCart = ({ product }: { product: IProduct }) => {
