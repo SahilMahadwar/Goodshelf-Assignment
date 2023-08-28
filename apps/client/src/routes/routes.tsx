@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 
 import { PageLayout } from "../layouts/page-layout";
+import { CartPage } from "../pages/cart";
 import { HomePage } from "../pages/home";
 
 export const Router = () => {
@@ -8,6 +9,7 @@ export const Router = () => {
     <Routes>
       <Route element={<PageLayout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="cart" element={<CartPage />} />
       </Route>
 
       <Route path="/*" element={<div>404</div>} />
