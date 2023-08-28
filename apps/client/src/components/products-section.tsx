@@ -1,5 +1,6 @@
 import { ReactElement } from "react";
 
+import useCart from "../hooks/use-cart";
 import { useFetchProducts } from "../hooks/use-fetch-products";
 import { ProductCard } from "./product-card";
 import { Swiper, SwiperSlide } from "./swiper";
@@ -20,6 +21,8 @@ export const ProductsDisplay = ({ section, heading }: IProductsSection) => {
   const { products, isLoading, error, isError } = useFetchProducts({
     section: section,
   });
+
+  const { addProductToCart } = useCart();
 
   if (isLoading) {
     return (
@@ -73,7 +76,11 @@ export const ProductsDisplay = ({ section, heading }: IProductsSection) => {
                     image={
                       <ProductCard.Image imageUrl={product.product_images[0]} />
                     }
-                    action={<ProductCard.Button />}
+                    action={
+                      <ProductCard.Button
+                        onClick={() => addProductToCart({ product: product })}
+                      />
+                    }
                     name={product.product_name}
                     oneLiner={product.one_liner}
                     price={product.price}
