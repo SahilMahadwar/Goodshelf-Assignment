@@ -18,7 +18,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   );
 
   const [cartValue, setCartValue] = useState<number>(
-    cartProducts.reduce((total, price) => total + price.price, 0),
+    cartProducts?.reduce((total, price) => total + price.price, 0),
   );
 
   useEffect(() => {
