@@ -14,13 +14,16 @@ export const CartContext = createContext<ICartContext | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartProducts, setCartProducts] = useState<IProduct[]>(
+    // get initial cartProducts from localStorage
     JSON.parse(localStorage.getItem("cartProducts") as string) || [],
   );
 
   const [cartValue, setCartValue] = useState<number>(
+    // calculate total cart value
     cartProducts.reduce((total, price) => total + price.price, 0),
   );
 
+  // update cart products and value on state change
   useEffect(() => {
     localStorage.setItem("cartProducts", JSON.stringify(cartProducts));
   }, [cartProducts]);
