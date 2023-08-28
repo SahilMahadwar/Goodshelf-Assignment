@@ -32,7 +32,6 @@ export const HomePage = () => {
         section="FARM_TO_TABLE"
         heading={<ProductsDisplay.Heading heading="Farm To Table" />}
       />
-      <div className="grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4"></div>
     </div>
   );
 };

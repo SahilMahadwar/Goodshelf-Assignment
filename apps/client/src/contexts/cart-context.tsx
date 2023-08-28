@@ -14,11 +14,11 @@ export const CartContext = createContext<ICartContext | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartProducts, setCartProducts] = useState<IProduct[]>(
-    JSON.parse(localStorage.getItem("cartProducts") as string),
+    JSON.parse(localStorage.getItem("cartProducts") as string) || [],
   );
 
   const [cartValue, setCartValue] = useState<number>(
-    cartProducts?.reduce((total, price) => total + price.price, 0),
+    cartProducts.reduce((total, price) => total + price.price, 0),
   );
 
   useEffect(() => {
@@ -26,10 +26,7 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
   }, [cartProducts]);
 
   useEffect(() => {
-    setCartValue(
-      cartProducts?.reduce((total, price) => total + price.price, 0),
-    );
-    console.log(cartValue);
+    setCartValue(cartProducts.reduce((total, price) => total + price.price, 0));
   }, [cartProducts]);
 
   const addProductToCart = ({ product }: { product: IProduct }) => {
