@@ -1,4 +1,5 @@
-import { Trash2 } from "lucide-react";
+import { ShoppingBasket, Trash2 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { CartFooter } from "../components/cart-footer";
 import { ProductCard } from "../components/product-card";
 import useCart from "../hooks/use-cart";
@@ -36,7 +37,19 @@ export const CartPage = () => {
             })}
           </div>
         ) : (
-          <div>no items found in your cart</div>
+          <div className="mt-14 flex flex-col  items-center space-y-4">
+            <ShoppingBasket className="h-24 w-24 text-rose-500" />
+            <h2 className="text-lg font-medium text-slate-800">
+              Your Cart Is Empty!
+            </h2>
+
+            <Link
+              to={"/"}
+              className="rounded-lg bg-rose-500 px-4 py-2 text-sm text-white"
+            >
+              Continue Shopping
+            </Link>
+          </div>
         )}
       </div>
 
