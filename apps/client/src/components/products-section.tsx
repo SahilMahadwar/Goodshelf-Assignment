@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-
 import useCart from "../hooks/use-cart";
 import { useFetchProducts } from "../hooks/use-fetch-products";
 import { ProductCard } from "./product-card";
@@ -63,11 +62,9 @@ export const ProductsDisplay = ({ section, heading }: IProductsSection) => {
                 slidesPerView: 4,
               },
             }}
-            on={{
-              slideChange: () => console.log("slide changed"),
-            }}
             loop
             spaceBetween={32}
+            grabCursor
           >
             {products.map((product) => {
               return (
