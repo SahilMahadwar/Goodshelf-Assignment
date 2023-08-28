@@ -1,5 +1,5 @@
 import { PlusSquare } from "lucide-react";
-import { ReactElement } from "react";
+import { HtmlHTMLAttributes, ReactElement } from "react";
 import { Skeleton } from "./skeleton";
 
 interface IProductCard {
@@ -47,16 +47,18 @@ export const ProductCardImage = ({
   return (
     <img
       loading="lazy"
-      className="h-44 w-full overflow-hidden rounded-2xl object-cover"
+      className="h-44 w-full overflow-hidden rounded-2xl bg-slate-200 object-cover"
       src={imageUrl}
       alt="product image"
     />
   );
 };
 
-export const ProductCardButton = () => {
+export const ProductCardButton = ({
+  ...rest
+}: HtmlHTMLAttributes<HTMLButtonElement>) => {
   return (
-    <button>
+    <button {...rest}>
       <PlusSquare className="h-6 w-6 text-rose-400 hover:text-rose-500" />
     </button>
   );
