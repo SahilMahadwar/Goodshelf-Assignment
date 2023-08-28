@@ -6,7 +6,7 @@ export const CartFooter = () => {
 
   return (
     <div className="flex items-center justify-between border-t px-6 py-4">
-      <h3 className="text-xl text-slate-800">
+      <h3 className="text-xl">
         Total Cart Value: <span className="font-medium">₹{cartValue}</span>
       </h3>
       <button

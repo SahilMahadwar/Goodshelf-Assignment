@@ -24,7 +24,7 @@ export const ProductCard = ({
       {image}
       <div className="mt-4 space-y-4 px-1.5 ">
         <div className="space-y-1">
-          <h3 className="font-medium text-slate-800">{name}</h3>
+          <h3 className="font-medium">{name}</h3>
           <p className="line-clamp-3 text-sm text-slate-600">{oneLiner}</p>
         </div>
         <div className="flex justify-between">

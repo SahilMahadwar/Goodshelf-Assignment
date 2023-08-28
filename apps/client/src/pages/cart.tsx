@@ -39,9 +39,7 @@ export const CartPage = () => {
         ) : (
           <div className="mt-14 flex flex-col  items-center space-y-4">
             <ShoppingBasket className="h-24 w-24 text-rose-500" />
-            <h2 className="text-lg font-medium text-slate-800">
-              Your Cart Is Empty!
-            </h2>
+            <h2 className="text-lg font-medium">Your Cart Is Empty!</h2>
 
             <Link
               to={"/"}
